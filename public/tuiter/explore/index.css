@@ -1,0 +1,153 @@
+.wd-explore-page{
+    margin: 1% 20%;
+}
+.wd-search-bar {
+    align-items: center;
+    display: flex;
+    width: 90%;
+    height: 42px;
+    margin: 0 auto;
+    border-radius: 20px;
+    border-width: 10px;
+    background-color: #D3D3D3;
+}
+
+.wd-cog-position {
+    position: relative;
+    bottom: 30px;
+    left: 98%;
+}
+
+.wd-search-input{
+    width: 90%;
+    height: 40px;
+    border:none; 
+    outline:none;   
+    font-size: 16px;   
+    color: #5A5A5A; 
+    margin-left: 2%;  
+    vertical-align: middle;
+    border-radius: 0px 20px 20px 0px;
+    background-color:#D3D3D3;
+}
+.wd-search-icon {
+    vertical-align: middle;
+    position: relative;
+    left: 1%;
+}
+
+.wd-nav {
+    height: 40px;
+}
+  
+.wd-nav-list {
+    list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wd-nav-item {
+    display: inline;
+}
+  
+.wd-nav-link {
+    position: relative;
+    display: inline-block;
+    color: grey;
+    text-decoration: none;
+}
+  
+.wd-nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(13, 110, 253);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+  
+.wd-nav-link:hover::after,
+.wd-nav-link.active::after {
+    opacity: 1;
+}
+  
+.wd-nav-link.active {
+    font-weight: bold;
+    color: black;
+}
+
+.wd-image-container {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url(http://thepaper-prod-oldimagefromnfs.oss-cn-shanghai.aliyuncs.com/image/16/439/3.jpg);
+    background-size: cover;
+}
+
+.wd-image-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+    color: white;
+}
+  
+.wd-tuits-ul{
+    list-style: none;
+    list-style-position: outside;
+    padding-left: 0%;
+}
+.wd-tuits-li{
+    padding-top: 30px;
+    margin: 0px 0px 60px 0px;
+}
+
+.wd-ellipsis{
+    color: #5A5A5A;
+    margin-right: 0px;
+}
+.wd-tuits-comfont{
+    color: #5A5A5A;
+}
+.wd-tuits-subjfont{
+    color: black;
+    font-weight: bold;   
+}
+.wd-left{
+    float: left;
+    width: 90%;
+}
+.wd-right{
+    float: left;
+    width: 10%;
+}
+
+.wd-list-com{
+    color: black;
+    margin-bottom: 10px;
+}
+
+.wd-cur{
+    background-color:rgb(13, 110, 253);
+    color: white;
+}
+
+.img-wrap {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+
+}
+
+.img-wrap img  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
