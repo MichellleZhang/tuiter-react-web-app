@@ -9,7 +9,7 @@ function BooleanVariables(){
     let true4 = numberVariable === 123
     let true5 = floatingPointNumber !== 321.432
     let false3 = numberVariable < 100
-    let sortaTrue = '1' == 1  // never use this == type coercion
+    // let sortaTrue = '1' == 1  // never use this == type coercion
     let notTrue   = '1' === 1 // always use this ===
     return(
         <div>
@@ -22,7 +22,7 @@ function BooleanVariables(){
             true4 = {true4+""}<br/>
             true5 = {true5+""}<br/>
             false3 = {false3+""}<br/>
-            sortaTrue = {sortaTrue+""}<br/>
+            {/*sortaTrue = {sortaTrue+""}<br/>*/}
             notTrue = {notTrue+""}<br/>
         </div>
     );
