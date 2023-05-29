@@ -3,7 +3,7 @@ import { FaHome, FaHashtag, FaBell, FaEnvelope, FaBookmark, FaList, FaUser, FaEl
 import { Link, useLocation } from "react-router-dom";
 const NavigationSidebar = () => {
     const { pathname } = useLocation();
-    const [ignore, tuiter, active] = pathname.split("/");
+    const [, , active] = pathname.split("/");
     const links = [
         { name: "home", icon: FaHome },
         { name: "explore", icon: FaHashtag},
