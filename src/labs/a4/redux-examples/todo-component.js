@@ -1,9 +1,9 @@
-import React, {useState}from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {addTodo, deleteTodo, todoDoneToggle} from "./reducers/todos-reducer";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addTodo, deleteTodo, todoDoneToggle } from "./reducers/todos-reducer";
 const Todos = () => {
     const todos = useSelector(state => state.todos);
-    const [todo, setTodo] = useState({do: ''});
+    const [todo, setTodo] = useState({ do: '' });
     const dispatch = useDispatch();
 
     const toggleTodoDone = (todo) => {
@@ -16,7 +16,7 @@ const Todos = () => {
 
     const createTodoClickHandler = () => {
         dispatch(addTodo(todo))
-        setTodo({do:''})
+        setTodo({ do: '' })
     }
 
     const todoChangeHandler = (event) => {
@@ -27,7 +27,7 @@ const Todos = () => {
         setTodo(newTodo);
     }
 
-    return(
+    return (
         <>
             <h3>Todos</h3>
             <ul className="list-group">
@@ -35,7 +35,7 @@ const Todos = () => {
                     <button onClick={createTodoClickHandler} className="btn btn-primary w-25 float-end">Create</button>
                     <input onChange={todoChangeHandler}
                         value={todo.do}
-                        className="form-control w-75"/>
+                        className="form-control w-75" />
                 </li>
             </ul>
             <ul className="list-group">
@@ -45,13 +45,13 @@ const Todos = () => {
                             className="list-group-item">
                             <button onClick={() =>
                                 deleteTodoClickHandler(index)}
-                                    className="btn btn-danger float-end ms-2"> Delete
+                                className="btn btn-danger float-end ms-2"> Delete
                             </button>
-                        <input type="checkbox" className="me-2"
-                               checked={todo.done}
-                               onChange={()=>toggleTodoDone(todo)}
-                        />
-                        {todo.do}
+                            <input type="checkbox" className="me-2"
+                                checked={todo.done}
+                                onChange={() => toggleTodoDone(todo)}
+                            />
+                            {todo.do}
                         </li>
                     )
                 }

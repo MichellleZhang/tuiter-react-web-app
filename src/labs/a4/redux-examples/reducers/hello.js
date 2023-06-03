@@ -1,4 +1,4 @@
-const hello = () => ({message: 'Hello World'});
+const hello = () => ({ message: 'Hello World' });
 export default hello;
 
 

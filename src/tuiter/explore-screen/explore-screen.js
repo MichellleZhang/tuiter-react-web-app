@@ -41,7 +41,6 @@ function ExploreScreen() {
                     SpaceX Starship</h1>
             </div>
             <TuitSummaryList/>
-
         </>
     );
 };
