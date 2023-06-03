@@ -2,7 +2,7 @@ import TuitList from "../tuits-list/TuitList";
 import WhatHappening from "../whats-happening";
 import { Provider } from "react-redux";
 import { configureStore } from '@reduxjs/toolkit';
-import tuits from "../tuits-list/tuits-reducer";
+import tuits from "../reducers/tuits-reducer";
 
 const store = configureStore({
     reducer: { tuits }

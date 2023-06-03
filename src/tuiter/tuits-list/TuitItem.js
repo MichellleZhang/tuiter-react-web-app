@@ -2,7 +2,7 @@ import React from "react";
 import "./tuits.css";
 import { IoIosCloseCircleOutline, IoMdChatbubbles, IoMdRepeat, IoMdHeart, IoMdShareAlt, IoMdCheckmarkCircle } from "react-icons/io";
 import { useDispatch } from "react-redux";
-import { addLike, deleteTuit } from "./tuits-reducer";
+import { addLike, deleteTuit } from "../reducers/tuits-reducer";
 
 const TuitItem = (
   {

@@ -5,7 +5,7 @@ import { MdOutlineGifBox, MdFormatListBulleted } from "react-icons/md";
 import { BsEmojiSmile } from "react-icons/bs";
 import { TiCalendarOutline } from "react-icons/ti";
 import { BiBold, BiItalic } from "react-icons/bi";
-import { createTuit } from "./tuits-list/tuits-reducer";
+import { createTuit } from "./reducers/tuits-reducer";
 import { useDispatch } from "react-redux";
 
 const WhatsHappening = () => {
