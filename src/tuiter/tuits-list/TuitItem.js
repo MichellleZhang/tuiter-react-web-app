@@ -1,8 +1,9 @@
 import React from "react";
 import "./tuits.css";
-import { IoIosCloseCircleOutline, IoMdChatbubbles, IoMdRepeat, IoMdHeart, IoMdShareAlt, IoMdCheckmarkCircle } from "react-icons/io";
-import { useDispatch } from "react-redux";
-import { addLike, deleteTuit } from "../reducers/tuits-reducer";
+import { IoIosCloseCircleOutline, IoMdChatbubbles, IoMdRepeat, IoMdHeart, IoMdShareAlt, IoMdCheckmarkCircle,IoIosThumbsDown } from "react-icons/io";
+import {useDispatch } from "react-redux";
+// import {addLike} from "../reducers/tuits-reducer";
+import {deleteTuitThunk,updateTuitThunk} from "../services/tuits-thunk";
 
 const TuitItem = (
   {
@@ -15,14 +16,15 @@ const TuitItem = (
       "replies": 123,
       "retuits": 432,
       "likes": 12345,
+      "dislikes":33,
       "handle": "@spacex",
       "tuit": "This morning ar 12:34 EST Earth time, a convoy of Tesla CyberTrucks drove across the Martin landscape after picking up the Curiosity, Sojourner, Spirit, and Performance on their 6' beds"
     }
   }
 ) => {
   const dispatch = useDispatch();
-  const deleteTuitHandler = (id) => { dispatch(deleteTuit(id)); }
-  const addLikeHandler = (id) => { dispatch(addLike(id)); }
+  const deleteTuitHandler = (id) => { dispatch(deleteTuitThunk(id)); }
+  // const addLikeHandler = (id) => { dispatch(addLike(id)); }
 
   return (
     <li className="list-group-item">
@@ -54,8 +56,12 @@ const TuitItem = (
                 <span> {tuit.retuits}</span>
               </div>
               <div className="wd-grid-col-one-four">
-                <span onClick={() => addLikeHandler(tuit._id)}><IoMdHeart style={{ color: tuit.liked ? '#DC3644' : 'inherit' }} /></span>
-                <span> {tuit.likes}</span>
+                <IoMdHeart className="text-danger" onClick={() => dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1 }))}/>
+                <span className="ms-2">{tuit.likes}</span>
+              </div>
+              <div className="wd-grid-col-one-four">
+                <IoIosThumbsDown className="text-tertiary-color" onClick={() => dispatch(updateTuitThunk({ ...tuit, dislikes: tuit.dislikes + 1 }))}/>
+                <span className="ms-2">{tuit.dislikes}</span>
               </div>
               <div className="wd-grid-col-one-four">
                 <IoMdShareAlt />
