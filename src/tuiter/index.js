@@ -13,6 +13,8 @@ import ProfileScreen from "./user/profile-screen";
 import LoginScreen from "./user/Login-screen";
 import RegisterScreen from "./user/register-screen";
 import authReducer from "./reducers/auth-reducer";
+import ProtectedRoute from "./user/protected-route";
+import AuthContext from "./services/auth-context";
 
 const store = configureStore({
     reducer: { who: whoReducer, tuits: tuitsReducer, user: authReducer }
@@ -34,6 +36,7 @@ function Tuiter() {
                         <NavigationSidebar />
                     </div>
                     <div className="col-lg-7 col-md-9 col-sm-10 col">
+                    <AuthContext>
                         <Routes>
                             <Route path="/home" element={<HomeScreen />} />
                             <Route path="/explore" element={<ExploreScreen />} />
@@ -41,11 +44,12 @@ function Tuiter() {
                             <Route path="/messages" element={<h1>Messages</h1>} />
                             <Route path="/bookmarks" element={<BookmarksScreen />} />
                             <Route path="/lists" element={<h1>Lists</h1>} />
-                            <Route path="/profile" element={<ProfileScreen />} />
+                            <Route path="/profile" element={<ProtectedRoute><ProfileScreen /></ProtectedRoute>} />
                             <Route path="/more" element={<h1>More</h1>} />
                             <Route path="/login" element={<LoginScreen />} />
                             <Route path="/register" element={<RegisterScreen />} />
                         </Routes>
+                        </AuthContext>
                     </div>
                     <div className="col-3 d-none d-lg-block d-xl-block d-xxl-block">
                         <WhoToFollowListItem />

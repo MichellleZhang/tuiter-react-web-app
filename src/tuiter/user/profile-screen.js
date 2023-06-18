@@ -56,7 +56,8 @@ function ProfileScreen() {
                 </div>
             )}
             <div className="mt-2">
-                <button className="w-30 float-start" style={{ margin: '5px 130px' }}onClick={() => { dispatch(logoutThunk()); navigate("/tuiter/login"); }}>Logout</button>
+                <button className="w-30 float-start" style={{ margin: '5px 130px' }}onClick={() => { dispatch(logoutThunk()); navigate("/tuiter/login"); }}>Logout
+                </button>
                 <button className="w-30 float-start" style={{ margin: '5px 130px' }} onClick={save}>Save</button>
             </div>
 

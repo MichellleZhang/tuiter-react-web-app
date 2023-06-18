@@ -28,5 +28,4 @@ export const register = async ({ username, password, lastName,firstName}) => {
     const response = await api.post(`${USERS_URL}/register`, { username,password,lastName,firstName});
     const user = response.data;
     return user;
-
 };
